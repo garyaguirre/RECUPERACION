@@ -28,7 +28,7 @@
                 <div class="col-lg-12 text-center">
                     <input type="reset" class="btn btn-secondary" value="Cancel">
                     <input type="button" class="btn btn-primary"
-                        value="Save Changes" (click)="save()">
+                        value="Save Changes" (click)="save()" [disabled]="!catalogo.valid">
                 </div>
             </div>
     
@@ -43,7 +43,7 @@
         </tr>
     </thead>
     <tbody>
-     <tr *ngFor="let d of catalogo">
+     <tr *ngFor="let d of catalogos">
             <td>{{d.titulo}}</td>
             <td>{{d.codigo}}</td>
             <td>{{d.precio}}</td>
