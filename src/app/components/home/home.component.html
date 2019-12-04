@@ -1,10 +1,17 @@
 <button routerLink="/catalogo">catalogo</button>
 <div class="container"> 
-    <div *ngFor="let d of catalogos">
-        <b class="form-control form-control-lg" >Titulo: {{d.titulo}} <br> </b> 
-        <b class="form-control form-control-lg">Codigo: {{d.codigo}} <br> </b>
-        <b class="form-control form-control-lg">Precio: {{d.precio}} <br> </b>
-       <b class="form-control form-control-lg">Descripcion:  {{d.descripcion}} <br> </b>
+    <div >
+         <div class="row">
+            <div class="col-6 mb-3" *ngFor="let d of catalogos">
+                    <div routerLink="/verimagen/{{d.id}}">
+                            <b class="form-control form-control-lg" >Titulo: {{d.titulo}} <br> </b> 
+                            <b class="form-control form-control-lg">Codigo: {{d.codigo}} <br> </b>
+                            <b class="form-control form-control-lg">Precio: {{d.precio}} <br> </b>
+                           <b class="form-control form-control-lg">Descripcion:  {{d.descripcion}} <br> </b>
+                    </div>
+            </div>
+                
+        </div>
     </div>
 </div>
 
