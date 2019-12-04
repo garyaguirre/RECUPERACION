@@ -1,4 +1,4 @@
-<form >
+<form [formGroup]="imagen">
             
         <div class="form-group row">
             <label class="col-lg-3 col-form-label form-control-label">TITULO</label>
@@ -9,39 +9,71 @@
         <div class="form-group row">
             <label class="col-lg-3 col-form-label form-control-label">DETALLES</label>
             <div class="col-lg-9">
-                <input class="form-control" type="email">
+                <input class="form-control" type="email" formControlName="detalles">
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-lg-3 col-form-label form-control-label">URL IMAGEN</label>
+            <label class="col-lg-3 col-form-label form-control-label">URL_IMAGEN</label>
             <div class="col-lg-9">
-                <input class="form-control" type="text">
+                <input class="form-control" type="text" formControlName="url_imagen">
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-lg-3 col-form-label form-control-label">ID YOUTUBE</label>
+            <label class="col-lg-3 col-form-label form-control-label">ID_YOUTUBE</label>
             <div class="col-lg-9">
-                <input class="form-control" type="text">
+                <input class="form-control" type="text" formControlName="id_youtube">
             </div>
         </div>
         <div class="form-group row">
-                <label class="col-lg-3 col-form-label form-control-label">URL AUDIO</label>
+                <label class="col-lg-3 col-form-label form-control-label">URL_AUDIO</label>
                 <div class="col-lg-9">
-                    <input class="form-control" type="text">
+                    <input class="form-control" type="text" formControlName="url_audio">
                 </div>
             </div>
             <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">PRINCIPAL</label>
                     <div class="col-lg-9">
-                        <input class="form-control" type="text">
+                        <input class="form-control" type="text" formControlName="principal">
                     </div>
                 </div>
+                <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">CATALOGOSID</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" type="text" formControlName="catalogosid">
+                        </div>
+                    </div>    
         <div class="form-group row">
             <div class="col-lg-12 text-center">
                 <input type="reset" class="btn btn-secondary" value="Cancel">
                 <input type="button" class="btn btn-primary"
-                    value="Save Changes">
+                    value="Save Changes" (click)="save()">
             </div>
         </div>
 
 </form>
+<table class="table table-light">
+    <thead class="thead-light">
+        <tr>
+            <th>titulo</th>
+            <th>detalles</th>
+            <th>url_imagen</th>
+            <th>id_youtube</th>
+            <th>url_audio</th>
+            <th>principal</th>
+            <th>catalogosid</th>             
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let d of imagen">
+            <td>{{d.titulo}}</td>
+            <td>{{d.detalles}}</td>
+            <td>{{d.url_imagen}}</td>
+            <td>{{d.id_youtube}}</td>
+            <td>{{d.url_audio}}</td>
+            <td>{{d.principal}}</td>
+            <td>{{d.catalogosid}}</td>
+        </tr>
+    </tbody>
+
+</table>

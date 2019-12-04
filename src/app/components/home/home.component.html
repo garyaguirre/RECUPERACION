@@ -1,16 +1,8 @@
-<table class="table table-light table-hover">
-    <thead class="thead-light">
-        <tr>
-            <th>#</th>
-            <th>Foto </th>
-            <th>Nombre</th>
-            <th>Precio</th>
-            <th>video</th>
-            <th>Audio</th>
-            <th>Acciones</th>
-        </tr>
-        <input type="submit" value="{{ $Modo=='crear' ? 'Agregar':'Modificar estudiante'}}">
-
-        
-    </thead>
-</table>
+<div class="container"> 
+    <div *ngFor="let d of imagen">
+         {{d.titulo}}
+         {{d.codigo}}
+         {{d.precio}}
+        {{d.descripcion}}
+    </div>
+</div>
