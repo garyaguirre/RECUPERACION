@@ -4,6 +4,8 @@ import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { ImagenesComponent } from './components/imagenes/imagenes.component';
 import { HomeComponent } from './components/home/home.component';
 
+import { VerimagenComponent } from './components/verimagen/verimagen.component';
+
 const routes: Routes = [
   {
     path: 'catalogo',
@@ -12,6 +14,10 @@ const routes: Routes = [
   {
     path: 'imagen',
     component: ImagenesComponent
+  },
+  {
+    path: 'verimagen/:id',
+    component: VerimagenComponent
   },
   {
     path: '',

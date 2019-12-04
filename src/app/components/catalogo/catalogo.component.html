@@ -1,3 +1,7 @@
+<div class="mt-2">
+    <button routerLink="/imagen"> imagen</button>
+    <button routerLink=""> home</button>
+</div>
 <form [formGroup]="catalogo">
 
             <div class="form-group row">
@@ -48,6 +52,7 @@
             <td>{{d.codigo}}</td>
             <td>{{d.precio}}</td>
             <td>{{d.descripcion}}</td>
+            <td><button (click)="delete(d.id)">delete</button></td>
         </tr>
     </tbody>
 

@@ -1,0 +1,48 @@
+<div class="container">
+    <button routerLink="">home</button>
+    <div *ngFor="let d of datos">
+        <div class="row">
+            <div class="col-12" *ngIf="d.principal == 1" style="text-align: center;">
+                    detalles: {{d.detalles}} <br>
+                    titulo: {{d.titulo}} <br>
+                    principal: {{d.principal}} <br>
+                    url_audio: {{d.url_audio}} <br>
+                    <img src="{{d.url_imagen}}" alt=""> <br>
+                    id youtube: {{d.id_youtube}} <br>
+                    id: {{d.id}}
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-12" *ngIf="d.principal == 0">
+                        id: {{d.id}}
+                        <img src="{{d.url_imagen}}" alt=""  data-toggle="modal" data-target="#exampleModal" (click)="detalles(d.id)"> 
+                </div>
+            </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div *ngIf="otros">
+                    detalles: {{otros.detalles}} <br>
+                    titulo: {{otros.titulo}} <br>
+                    principal: {{otros.principal}} <br>
+                    url_audio: {{otros.url_audio}} <br>
+                    <img src="{{otros.url_imagen}}" alt=""> <br>
+                    id youtube: {{otros.id_youtube}} <br>
+                    id: {{otros.id}}
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>

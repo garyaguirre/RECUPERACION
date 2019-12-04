@@ -12,10 +12,10 @@ export class ImagenesComponent implements OnInit {
   constructor(private imagenService: imagenService,private formBuilder: FormBuilder ) { 
   }
   imagenes
-  imagen:FormGroup
+  imagenForm:FormGroup
   ngOnInit() {
     this.imagenList()
-    this.imagen = this.formBuilder.group({
+    this.imagenForm = this.formBuilder.group({
       id:  [''],
       titulo: ['', [Validators.required]],
       detalles: ['', [Validators.required]],
@@ -29,24 +29,29 @@ export class ImagenesComponent implements OnInit {
     
 }
 save(){
-  console.log(this.imagen.value)
-if(this.imagen.value.id == null){
-  this.imagenService.add(this.imagen.value).subscribe(response=>{
+  console.log(this.imagenForm.value)
+if(this.imagenForm.value.id == null){
+  this.imagenService.add(this.imagenForm.value).subscribe(response=>{
     this.imagenList();
   });
 }else{
-  this.imagenService.update( this.imagen.value.id,this.imagen.value).subscribe(response=>{
+  this.imagenService.update( this.imagenForm.value.id,this.imagenForm.value).subscribe(response=>{
     this.imagenList();
   });
 }
 this.borrar();
 }
 borrar(){
-this.imagen.reset();
+this.imagenForm.reset();
 }
 imagenList(){
   this.imagenService.getList().subscribe(response=>{
-    this.imagen = response;
+    this.imagenes = response;
   })
 }
+delete(id){
+  this.imagenService.delete(id).subscribe(response=>{
+    this.imagenList()
+  })
+  }
 }

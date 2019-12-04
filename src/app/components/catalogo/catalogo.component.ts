@@ -47,4 +47,9 @@ catalogolist(){
     this.catalogos = response;
   })
 }
+delete(id){
+  this.catalogoService.delete(id).subscribe(response=>{
+    this.catalogolist()
+  })
+  }
 }

@@ -9,12 +9,14 @@ import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { VerimagenComponent } from './components/verimagen/verimagen.component';
 @NgModule({
   declarations: [
     AppComponent,
     CatalogoComponent,
     ImagenesComponent,
-    HomeComponent
+    HomeComponent,
+    VerimagenComponent
   ],
   imports: [
     BrowserModule,

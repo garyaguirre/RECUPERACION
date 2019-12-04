@@ -18,6 +18,9 @@ export class imagenService {
   public getById(id): Observable<any> {
     return this.http.get<any>(`${this.endPoint}/${id}`);
   }
+  public getById2(id): Observable<any> {
+    return this.http.get<any>(`${this.endPoint}2/${id}`);
+  }
   public add(data): Observable<any> {
     return this.http.post<any>(`${this.endPoint}`, data);
   }
@@ -25,7 +28,6 @@ export class imagenService {
     return this.http.put<any>(`${this.endPoint}/${id}`, data);
   }
   public delete(id): Observable<any> {
-    console.log(`${this.endPoint}/${id} `);
     return this.http.delete<any>(`${this.endPoint}/${id}`);
   }
 }

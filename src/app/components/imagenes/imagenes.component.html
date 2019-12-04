@@ -1,4 +1,5 @@
-<form [formGroup]="imagen">
+<button routerLink="/catalogo"> catalogos</button>
+<form [formGroup]="imagenForm">
             
         <div class="form-group row">
             <label class="col-lg-3 col-form-label form-control-label">TITULO</label>
@@ -46,7 +47,7 @@
             <div class="col-lg-12 text-center">
                 <input type="reset" class="btn btn-secondary" value="Cancel">
                 <input type="button" class="btn btn-primary"
-                    value="Save Changes" (click)="save()" [disabled]="!imagen.valid">
+                    value="Save Changes" (click)="save()" [disabled]="!imagenForm.valid">
             </div>
         </div>
 
@@ -67,7 +68,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let d of imagen">
+        <tr *ngFor="let d of imagenes">
             <td>{{d.titulo}}</td>
             <td>{{d.detalles}}</td>
             <td>{{d.url_imagen}}</td>
@@ -75,6 +76,7 @@
             <td>{{d.url_audio}}</td>
             <td>{{d.principal}}</td>
             <td>{{d.catalogosid}}</td>
+            <td><button (click)="delete(d.id)">delete</button></td>
         </tr>
     </tbody>
 
