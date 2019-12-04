@@ -1,5 +1,12 @@
 <div class="container">
     <button routerLink="">home</button>
+    <div class="modal-footer">
+      
+      
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">AGREGAR</button>
+        
+        
+      </div>
     <div *ngFor="let d of datos">
         <div class="row">
             <div class="col-12" *ngIf="d.principal == 1" style="text-align: center;">
@@ -39,6 +46,7 @@
                     id youtube: {{otros.id_youtube}} <br>
                     id: {{otros.id}}
               </div>
+              
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

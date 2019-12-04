@@ -10,13 +10,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VerimagenComponent } from './components/verimagen/verimagen.component';
+import { AgregariComponent } from './components/agregari/agregari.component';
 @NgModule({
   declarations: [
     AppComponent,
     CatalogoComponent,
     ImagenesComponent,
     HomeComponent,
-    VerimagenComponent
+    VerimagenComponent,
+    AgregariComponent,
+
   ],
   imports: [
     BrowserModule,
