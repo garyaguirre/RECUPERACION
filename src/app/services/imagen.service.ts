@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class imagenService {
 
   
-  endPoint = 'http://localhost:8000/api/imagen';
+  endPoint = 'http://localhost:8000/api/imagenes';
 
   constructor(private http: HttpClient) {
   }

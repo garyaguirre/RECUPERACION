@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CatalogoService {
 
-  endPoint = 'http://localhost:8000/api/Catalogo';
+  endPoint = 'http://localhost:8000/api/catalogos';
 
   constructor(private http: HttpClient) {
   }
