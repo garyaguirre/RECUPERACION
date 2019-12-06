@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
+
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
 @Injectable({
   providedIn: 'root'
 })
-export class imagenService {
+export class adminService {
 
-  
-  endPoint = 'http://localhost:8000/api/imagenes';
+  endPoint = 'http://localhost:4100/api/admin';
 
   constructor(private http: HttpClient) {
   }
@@ -18,11 +17,7 @@ export class imagenService {
   public getById(id): Observable<any> {
     return this.http.get<any>(`${this.endPoint}/${id}`);
   }
-  public getById2(id): Observable<any> {
-    return this.http.get<any>(`${this.endPoint}2/${id}`);
-  }
   public add(data): Observable<any> {
-    console.log(data)
     return this.http.post<any>(`${this.endPoint}`, data);
   }
   public update(id, data): Observable<any> {
